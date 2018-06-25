@@ -7,6 +7,7 @@
       :style="{ width: dropdownWidth }"
       role="region">
       <el-scrollbar
+        @bar-scroll="handleScroll"
         tag="ul"
         wrap-class="el-autocomplete-suggestion__wrap"
         view-class="el-autocomplete-suggestion__list">
@@ -49,6 +50,9 @@
     methods: {
       select(item) {
         this.dispatch('ElAutocomplete', 'item-click', item);
+      },
+      handleScroll(event) {
+        this.$emit('bar-scroll', event);
       }
     },
 

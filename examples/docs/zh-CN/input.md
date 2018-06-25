@@ -458,6 +458,7 @@ export default {
   <el-col :span="12">
     <div class="sub-title">激活即列出输入建议</div>
     <el-autocomplete
+      @bar-scroll="handleScroll"
       class="inline-input"
       v-model="state1"
       :fetch-suggestions="querySearch"
@@ -487,6 +488,9 @@ export default {
       };
     },
     methods: {
+      handleScroll(event) {
+        console.log('scroll', event);
+      },
       querySearch(queryString, cb) {
         var restaurants = this.restaurants;
         var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;
