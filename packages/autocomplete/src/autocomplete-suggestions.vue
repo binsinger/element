@@ -52,7 +52,7 @@
         this.dispatch('ElAutocomplete', 'item-click', item);
       },
       handleScroll(event) {
-        // this.$emit('bar-scroll', event);
+        this.$emit('bar-scroll', event);
       }
     },
 

@@ -105,7 +105,7 @@ export default {
       this.moveX = ((wrap.scrollLeft * 100) / wrap.clientWidth);
 
       console.log('scroll');
-      // this.$emit('bar-scroll', evt);
+      this.$emit('bar-scroll', evt);
     },
 
     update() {
