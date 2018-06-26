@@ -237,7 +237,7 @@
         this.$el.querySelector('.el-input__inner').setAttribute('aria-activedescendant', `${this.id}-item-${this.highlightedIndex}`);
       },
       handleScroll(event) {
-        this.$emit('bar-scroll', event);
+        // this.$emit('bar-scroll', event);
       }
     },
     mounted() {

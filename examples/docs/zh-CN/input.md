@@ -105,6 +105,9 @@
       },
       handleIconClick(ev) {
         console.log(ev);
+      },
+       handleScroll(event) {
+        console.log('scroll', event);
       }
     },
     mounted() {
@@ -182,7 +185,7 @@
 
 ## Input 输入框
 
-通过鼠标或键盘输入字符
+通过鼠标或键盘输入字aaaa符
 
 ### 基础用法
 
@@ -194,7 +197,7 @@
 export default {
   data() {
     return {
-      input: ''
+      input: 'hello'
     }
   }
 }
@@ -458,12 +461,12 @@ export default {
   <el-col :span="12">
     <div class="sub-title">激活即列出输入建议</div>
     <el-autocomplete
-      @bar-scroll="handleScroll"
       class="inline-input"
       v-model="state1"
       :fetch-suggestions="querySearch"
       placeholder="请输入内容"
       @select="handleSelect"
+      @bar-scroll="handleScroll"
     ></el-autocomplete>
   </el-col>
   <el-col :span="12">
@@ -488,9 +491,7 @@ export default {
       };
     },
     methods: {
-      handleScroll(event) {
-        console.log('scroll', event);
-      },
+     
       querySearch(queryString, cb) {
         var restaurants = this.restaurants;
         var results = queryString ? restaurants.filter(this.createFilter(queryString)) : restaurants;
